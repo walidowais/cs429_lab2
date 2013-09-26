@@ -12,6 +12,7 @@
 
 FILE * input;
 
+// pre: input is initialized to file
 void printfile(void){
 	unsigned int c;
 
@@ -19,11 +20,42 @@ void printfile(void){
 		fprintf(stderr, "5bit: Can't open file.\n");
 		exit(1);
 	}
-	while((c = getc(input)) != EOF){
-		fprintf(stdout, "%c", c);
+	else{
+		while((c = getc(input)) != EOF){
+			fprintf(stdout, "0x%c", c);	
+		}
 	}
 }
 
+void encode(void){
+	unsigned int c;
+
+	if(input == NULL){
+		fprintf(stderr, "5bit: Can't open file.\n");
+		exit(1);
+	}
+	else{
+		while((c = getc(input)) != EOF){
+			// encoding process
+		}
+	}
+}
+
+void decode(void){
+	unsigned int c;
+
+	if (input == NULL){
+		fprintf(stderr, "5bit: Can't open file.\n");
+		exit(1);
+	}
+	else{
+		while((c = getc(input)) != EOF){
+			// decoding process
+		}
+	}
+}
+
+// main function
 int main(int argc, char *argv[])
 {
 	int i;
@@ -33,14 +65,13 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "5bit: decode function not implemented\n");
 			if(argc > 2){
 				for(i = 2; i < argc; i++){
-					//decode(input)
-					fprintf(stdout, "%s\n", argv[i]);
+					// decode()
+					// fprintf(stdout, "%s\n", argv[i]);
 					input = fopen(argv[i], "r");
 					printfile();
 				}
 			}
 			else{
-				fprintf(stderr, "5bit: decode function not implemented\n");
 				input = stdin;
 				//decode();
 				printfile();
@@ -49,17 +80,17 @@ int main(int argc, char *argv[])
 		else{
 			fprintf(stderr, "5bit: encode function not implemented\n");
 			for(i = 1; i < argc; i++){
-				//encode(input)
-				fprintf(stdout, "\n--------%s\n", argv[i]);
+				// encode()
+				// fprintf(stdout, "\n--------%s\n", argv[i]);
 				input = fopen(argv[i], "r");
 				printfile();
 			}
 		}
 	}
 	else{
-		fprintf(stderr, "5bit: decode function not implemented\n");
+		fprintf(stderr, "5bit: encode function not implemented\n");
 		input = stdin;
-		//encode(input);
+		// encode();
 		printfile();
 	}
 
