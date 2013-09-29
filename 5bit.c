@@ -28,7 +28,7 @@ void printfile(void){
 }
 
 void encode(void){
-	unsigned int c;
+	int c;
 
 	if(input == NULL){
 		fprintf(stderr, "5bit: Can't open file.\n");
@@ -37,9 +37,20 @@ void encode(void){
 	else{
 		while((c = getc(input)) != EOF){
 			// encoding process
+			
+			}
 		}
 	}
 }
+
+// char five_to_char(int fivebit){
+// 	switch(fivebit){
+// 		case 0:
+// 			return 'A';
+// 		case 0:
+// 			return 'A';
+// 	}
+// }
 
 void decode(void){
 	unsigned int c;
