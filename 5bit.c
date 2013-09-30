@@ -2,7 +2,7 @@
 	Walid Owais
 	EID: wo783
 	Section: 53845
-
+	Slip day: 1
 	5bit -- translates binary Linux file into just "A-Z" and "0-5"
 
 */
