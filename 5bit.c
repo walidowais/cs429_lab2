@@ -112,7 +112,7 @@ void encode(void){
 			}
 
 		}
-		// fprintf(stdout, "%d ____ 0x%0x\n", size, (q >> ((sizeof(int) * 8) - 5)));
+		// fprintf(stdout, "%d_0x%0x\n", size, (q >> ((sizeof(int) * 8) - 5)));
 		write(q >> ((sizeof(int) * 8) - 5));
 	}
 }
